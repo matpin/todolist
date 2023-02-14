@@ -1,7 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import './App.css';
 import ToDoList from './components/ToDoList';
-import AddToDoButton from './components/AddToDoForm';
+import AddToDoForm from './components/AddToDoForm';
 import { getToDoItemsFromLocalStorage, saveTodoItemsToLocalStorage } from './service/Service';
 
 
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <AddToDoButton/>
+      <AddToDoForm onAddToDo={handleAddToDo}/>
       <ToDoList toDoItems={todoItems}/>
     </div>
   );
