@@ -1,12 +1,12 @@
-const items = [
-    {
-        id: 1,
-        content: "Test",
-        complete: false
-    },
-    {
-        id: 2,
-        content: "Test 2",
-        complete: false
-    }
-]
+import React from 'react';
+
+const Item = ({ id, content, complete }) => {
+
+    return (
+        <div>
+            <p>{content}</p> 
+        </div>
+        )
+}
+
+export default Item;
