@@ -2,7 +2,7 @@ import React from 'react';
 import Item from './Item';
 import PropTypes from 'prop-types';
 
-const ToDoList = ({ toDoItems }) => {
+const ToDoList = ({ toDoItems, onDeleteToDo }) => {
 
     return (
         <ul>
@@ -21,6 +21,7 @@ ToDoList.propTypes = {
             complete: PropTypes.bool.isRequired,
         })
     ).isRequired,
+    onDeleteToDo: PropTypes.func.isRequired,
 };
 
 export default ToDoList;

@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
       <AddToDoForm onAddToDo={handleAddToDo}/>
-      <ToDoList toDoItems={todoItems}/>
+      <ToDoList toDoItems={todoItems} onDeleteToDo={handleOnDelete}/>
     </div>
   );
 }
