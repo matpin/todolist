@@ -24,17 +24,26 @@ function App() {
     saveTodoItemsToLocalStorage('item', items)
     }, [todoItems]);
 
-
   const handleOnDelete = useCallback(id => {
     const newTodoItems = todoItems.filter(item => item.id !== id)
     setTodoItems(newTodoItems)
     saveTodoItemsToLocalStorage('item', newTodoItems)
   }, [todoItems]);
 
+  const handleOnToggleComplete = useCallback(id => {
+    const item = todoItems.find(item => item.id === id)
+    item.complete = !item.complete
+    setTodoItems([...todoItems])
+    saveTodoItemsToLocalStorage('item', todoItems)
+  }, [todoItems]);
+
   return (
     <div>
       <AddToDoForm onAddToDo={handleAddToDo}/>
-      <ToDoList toDoItems={todoItems} onDeleteToDo={handleOnDelete}/>
+      <ToDoList 
+      toDoItems={todoItems}
+      onDeleteToDo={handleOnDelete}
+      onToggle={handleOnToggleComplete}/>
     </div>
   );
 }
