@@ -1,11 +1,18 @@
 import React from 'react';
 import Item from './Item';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const ToDoList = ({ toDoItems, onDeleteToDo, onToggle }) => {
 
+    const ListArea = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    `;
+
     return (
-        <ul>
+        <ListArea>
             {toDoItems.map(({id, content, complete}) => (
                 <Item 
                 id={id} 
@@ -14,7 +21,7 @@ const ToDoList = ({ toDoItems, onDeleteToDo, onToggle }) => {
                 onDeleteToDo={onDeleteToDo}
                 onToggle= {onToggle}/>
             ))}
-        </ul>
+        </ListArea>
     );
 }
 
