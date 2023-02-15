@@ -7,7 +7,7 @@ const ToDoList = ({ toDoItems, onDeleteToDo }) => {
     return (
         <ul>
             {toDoItems.map(({id, content, complete}) => (
-                <Item id={id} content={content} complete={complete}/>
+                <Item id={id} content={content} complete={complete} onDeleteToDo={onDeleteToDo}/>
             ))}
         </ul>
     );
