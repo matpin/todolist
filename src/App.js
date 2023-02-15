@@ -5,7 +5,6 @@ import AddToDoForm from './components/AddToDoForm';
 import { getToDoItemsFromLocalStorage, saveTodoItemsToLocalStorage } from './service/Service';
 
 
-
 function App() {
   const [todoItems, setTodoItems] = useState(getToDoItemsFromLocalStorage('item') || []);
 
@@ -36,6 +35,7 @@ function App() {
     setTodoItems([...todoItems])
     saveTodoItemsToLocalStorage('item', todoItems)
   }, [todoItems]);
+
 
   return (
     <div>
