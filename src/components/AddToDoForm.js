@@ -22,7 +22,7 @@ const AddToDoForm = ({onAddToDo}) => {
         setInputValue("");
     };
 
-    const ItemInput = styled.input`
+  const ItemInput = styled.input`
   width: 100%;
   font-size: 22px;
   padding: 12px 20px;
@@ -66,7 +66,7 @@ const AddToDoForm = ({onAddToDo}) => {
                     onChange={handleChange}
                     value={inputValue}
                     placeholder='Enter Task'/>
-                    <button type='submit'>Add</button>
+                    <AddButton type="submit">Add</AddButton>
                 </Form>
             </FormArea>
         </div>
